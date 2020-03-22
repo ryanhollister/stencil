@@ -60,7 +60,7 @@ const flush = () => {
   // DOM READS!!!
   consume(queueDomReads);
 
-  const timeout = (plt.$flags$ & PLATFORM_FLAGS.queueMask) === PLATFORM_FLAGS.appLoaded ? performance.now() + 10 * Math.ceil(queueCongestion * (1.0 / 22.0)) : Infinity;
+  const timeout = (plt.$flags$ & PLATFORM_FLAGS.queueMask) === PLATFORM_FLAGS.appLoaded ? performance.now() + 100 * Math.ceil(queueCongestion * (1.0 / 22.0)) : Infinity;
 
   // DOM WRITES!!!
   consumeTimeout(queueDomWrites, timeout);
